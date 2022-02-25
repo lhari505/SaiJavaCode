@@ -22,7 +22,7 @@ pipeline {
       parallel {
         stage('build') {
           steps {
-            echo 'build from maven'
+            sh 'mvn clean package'
           }
         }
 
@@ -37,7 +37,7 @@ pipeline {
 
     stage('test') {
       steps {
-        echo 'junit test'
+        sh 'mvn test'
       }
     }
 
@@ -47,5 +47,8 @@ pipeline {
       }
     }
 
+  }
+  tools {
+    maven 'M2_HOME'
   }
 }
