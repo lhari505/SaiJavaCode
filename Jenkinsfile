@@ -43,7 +43,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        echo 'using docker'
+        sh 'docker build -t harishl/my-app:1.0.0 .'
       }
     }
 
