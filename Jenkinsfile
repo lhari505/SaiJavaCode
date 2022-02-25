@@ -5,7 +5,7 @@ pipeline {
       parallel {
         stage('checkout scm') {
           steps {
-            echo 'pull from git'
+            git(url: 'https://github.com/lhari505/SaiJavaCode.git', branch: 'master')
           }
         }
 
